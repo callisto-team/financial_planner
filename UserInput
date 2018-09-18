@@ -1,0 +1,53 @@
+package firststep;
+
+import java.util.Scanner;
+
+public class UserInput {
+    private String userName;
+    private String pswd;
+    private String firstName;
+    private String lastName;
+    
+    //default constructor - values set to null if nothing entered
+    UserInput(){
+        this.userName = userName;
+        this.pswd = pswd;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    
+    UserInput(String userName, String pswd, String firstName, String lastName){
+        this.userName = userName;
+        this.pswd = pswd;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    
+    public String getName(){
+        return firstName + " " + lastName;
+    }
+    
+    private String getCredentials(){
+        return "Username: " + userName + "\nPassword: " + pswd;
+    }
+
+    public static void main(String[] args) {
+        Scanner UserInput = new Scanner(System.in);
+        
+        System.out.println("Create a Username: ");
+        String userName = UserInput.nextLine();
+        
+        System.out.println("Create a Password: ");
+        String pswd = UserInput.nextLine();    
+        
+        System.out.println("Enter First Name: ");
+        String firstName = UserInput.nextLine();
+        
+        System.out.println("Enter Last Name: ");
+        String lastName = UserInput.nextLine();
+
+        UserInput usr1 = new UserInput(userName, pswd, firstName, lastName);
+        System.out.println(usr1.getName());
+        System.out.println(usr1.getCredentials());     
+    }
+}
